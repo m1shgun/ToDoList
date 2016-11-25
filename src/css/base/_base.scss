@@ -1,0 +1,10 @@
+body {
+  background-color: $base-bg-color;
+  font: $base-font;
+}
+
+#content {
+  max-width: $content-max-width;
+  min-width: $content-min-width;
+  margin: auto;
+}
