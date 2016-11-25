@@ -2,20 +2,37 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as actions from '../redux/actions/actions';
-import Sample from '../components/Sample.jsx';
+import Field from '../components/Field.jsx';
+import ToDoList from '../components/ToDoList.jsx';
+import Sort from '../components/Sort.jsx';
 import DevTools from '../redux/utils/devtools';
 
 class App extends Component {
     render() {
-        const {value} = this.props.sample;
-        const {actionOne, actionTwo} = this.props.actions;
+        const {tasks, filter} = this.props.todo;
+        const {
+            addTodo,
+            clearTodo,
+            deleteTodo,
+            deleteAll,
+            changeFilter
+        } = this.props.actions;
 
         return (
             <div className="app">
-                <Sample
-                    sample={value}
-                    onActionOne={actionOne}
-                    onActionTwo={actionTwo}
+                <Field
+                    onTodoAdd={addTodo}
+                />
+                <Sort
+                    filter={filter}
+                    onFilterChange={changeFilter}
+                    onAllDelete={deleteAll}
+                />
+                <ToDoList
+                    tasks={tasks}
+                    filter={filter}
+                    onTodoClear={clearTodo}
+                    onTodoDelete={deleteTodo}
                 />
                 <DevTools />
             </div>
@@ -26,7 +43,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        sample: state.sample
+        todo: state.todo
     };
 };
 

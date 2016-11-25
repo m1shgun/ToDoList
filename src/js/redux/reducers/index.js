@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import sample from './sample'
+import todo from './todo'
 
 
 export default combineReducers({
-    sample
+    todo
 })

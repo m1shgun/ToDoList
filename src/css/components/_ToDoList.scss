@@ -1,0 +1,21 @@
+.to-do-list {
+  padding: 0 20px 15px 20px;
+  background-color: #fff;
+  border-bottom: {
+    left-radius: 10px;
+    right-radius: 10px;
+  }
+}
+
+.to-do-list__empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  background: #fff;
+  width: 100%;
+  border-bottom: {
+    left-radius: 10px;
+    right-radius: 10px;
+  }
+}

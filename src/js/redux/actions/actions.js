@@ -1,11 +1,33 @@
-export const actionOne = () => {
+export const addTodo = (input) => {
     return {
-        type: 'ACTION_ONE'
+        type: 'ADD_TODO',
+        text: input.value
     }
 };
 
-export const actionTwo = () => {
+export const clearTodo = (id) => {
     return {
-        type: 'ACTION_TWO'
+        type: 'CLEAR_TODO',
+        id
+    }
+};
+
+export const deleteTodo = (id) => {
+    return {
+        type: 'DELETE_TODO',
+        id
+    }
+};
+
+export const deleteAll = () => {
+    return {
+        type: 'DELETE_ALL'
+    }
+};
+
+export const changeFilter = (filter) => {
+    return {
+        type: 'CHANGE_FILTER',
+        filter
     }
 };

@@ -1,0 +1,36 @@
+.sort {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: {
+    top: 1px solid #dcdcdc;
+    bottom: 1px solid #dcdcdc;
+  }
+}
+
+.sort__link {
+  text-decoration: none;
+  display: inline-block;
+  color: #979797;
+  font-weight: bold;
+  padding: 10px;
+  user-select: none;
+  &:nth-child(2) {
+    margin: 0 20px;
+  }
+  &.active {
+    color: #464646;
+  }
+}
+
+.sort__delete-button {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url('../../img/trash.png') no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  margin-left: 20px;
+}

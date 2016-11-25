@@ -1,0 +1,32 @@
+.field {
+  position: relative;
+}
+
+.field__input {
+  width: 100%;
+  padding: 20px 50px 20px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-top: {
+    left-radius: 10px;
+    right-radius: 10px;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.field__clear-button {
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 20px;
+  top: 21px;
+  background: url('../../img/del.png') no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  &.show {
+    display: block;
+  }
+}
