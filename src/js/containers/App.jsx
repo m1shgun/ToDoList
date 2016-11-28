@@ -8,8 +8,26 @@ import Sort from '../components/Sort.jsx';
 import DevTools from '../redux/utils/devtools';
 
 class App extends Component {
+
+    static propTypes = {
+        tasks: React.PropTypes.array.isRequired,
+        filter: React.PropTypes.string.isRequired,
+        actions: React.PropTypes.object.isRequired
+    };
+
+    componentDidUpdate() {
+        this._updateLocalStorage();
+    }
+
+    _updateLocalStorage() {
+        const {tasks} = this.props;
+        localStorage.tasks = JSON.stringify(tasks);
+        localStorage.count = tasks[tasks.length - 1].id
+    }
+
     render() {
-        const {tasks, filter} = this.props.todo;
+        const {tasks} = this.props;
+        const {filter} = this.props;
         const {
             addTodo,
             clearTodo,
@@ -34,7 +52,9 @@ class App extends Component {
                     onTodoClear={clearTodo}
                     onTodoDelete={deleteTodo}
                 />
-                <DevTools />
+                {
+                    NODE_ENV === 'development' ? <DevTools /> : null
+                }
             </div>
 
         )
@@ -43,7 +63,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        todo: state.todo
+        tasks: state.tasks,
+        filter: state.filter
     };
 };
 

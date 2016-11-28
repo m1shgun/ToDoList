@@ -8,6 +8,7 @@ function Sort(props) {
     };
 
     const handleFilterChange = (e) => {
+        e.preventDefault();
         if (e.target.tagName === 'A') {
             let filter = 'all';
 

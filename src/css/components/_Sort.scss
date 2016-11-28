@@ -17,6 +17,7 @@
   font-weight: bold;
   padding: 10px;
   user-select: none;
+  transition: color $transition-property;
   &:nth-child(2) {
     margin: 0 20px;
   }
@@ -33,4 +34,17 @@
   background-size: cover;
   cursor: pointer;
   margin-left: 20px;
+}
+
+@media screen and (max-width: 335px) {
+  .sort__link {
+    padding: 10px;
+    &:nth-child(2) {
+      margin: 0 5px;
+    }
+  }
+
+  .sort__delete-button {
+    margin-left: 5px;
+  }
 }

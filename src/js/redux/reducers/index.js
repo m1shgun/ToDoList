@@ -1,7 +1,8 @@
-import { combineReducers } from 'redux'
-import todo from './todo'
-
+import { combineReducers } from 'redux';
+import tasks from './tasks';
+import filter from './filter';
 
 export default combineReducers({
-    todo
+    tasks,
+    filter
 })

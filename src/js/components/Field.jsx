@@ -13,10 +13,6 @@ class Field extends Component {
         this.input.focus();
     }
 
-    componentDidUpdate() {
-        this.input.focus();
-    }
-
     handleTodoAdd(e) {
         const input = e.target;
 
@@ -38,6 +34,7 @@ class Field extends Component {
     handleInputClear() {
         this.input.value = '';
         this.setShowClear(false);
+        this.input.focus();
     }
 
     setShowClear(value) {
