@@ -29,7 +29,7 @@ const path = {
     },
     src: {
         html: 'src/index.html',
-        css: 'src/css/main.scss',
+        css: 'src/sass/main.scss',
         js: 'src/js/main.js',
         img: 'src/img/**/*.*'
     },
@@ -39,7 +39,7 @@ const path = {
     },
     watch: {
         html: 'src/**/*.html',
-        css: 'src/css/**/*.scss',
+        css: 'src/sass/**/*.scss',
         js: 'src/js/**/*.+(js|jsx)',
         img: 'src/img/**/*.*'
     },

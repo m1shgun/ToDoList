@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as actions from '../redux/actions/actions';
+import * as tasksActions from '../redux/actions/tasksActions';
+import * as filterActions from '../redux/actions/filterActions';
 import Field from '../components/Field.jsx';
 import ToDoList from '../components/ToDoList.jsx';
 import Sort from '../components/Sort.jsx';
@@ -10,9 +11,10 @@ import DevTools from '../redux/utils/devtools';
 class App extends Component {
 
     static propTypes = {
-        tasks: React.PropTypes.array.isRequired,
-        filter: React.PropTypes.string.isRequired,
-        actions: React.PropTypes.object.isRequired
+        tasks: PropTypes.array.isRequired,
+        filter: PropTypes.string.isRequired,
+        tasksActions: PropTypes.object.isRequired,
+        filterActions: PropTypes.object.isRequired
     };
 
     componentDidUpdate() {
@@ -22,19 +24,18 @@ class App extends Component {
     _updateLocalStorage() {
         const {tasks} = this.props;
         localStorage.tasks = JSON.stringify(tasks);
-        localStorage.count = tasks[tasks.length - 1].id
+        localStorage.count = tasks.length > 0 ? tasks[tasks.length - 1].id : 0;
     }
 
     render() {
-        const {tasks} = this.props;
-        const {filter} = this.props;
+        const {tasks, filter} = this.props;
         const {
             addTodo,
             clearTodo,
             deleteTodo,
-            deleteAll,
-            changeFilter
-        } = this.props.actions;
+            deleteAll
+        } = this.props.tasksActions;
+        const {changeFilter} = this.props.filterActions;
 
         return (
             <div className="app">
@@ -70,7 +71,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        actions: bindActionCreators(actions, dispatch)
+        tasksActions: bindActionCreators(tasksActions, dispatch),
+        filterActions: bindActionCreators(filterActions, dispatch)
     };
 };
 
