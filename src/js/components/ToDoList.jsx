@@ -1,5 +1,6 @@
 import React from 'react';
-import ToDoItem from './ToDoItem.jsx'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ToDoItem from './ToDoItem.jsx';
 
 function ToDoList(props) {
     const {filter, onTodoClear, onTodoDelete} = props;
@@ -13,19 +14,27 @@ function ToDoList(props) {
 
     return (
         <div className="to-do-list">
-            {
-                tasks.length > 0
-                ?
-                    tasks.map((task) => (
-                        <ToDoItem
-                            key={task.id}
-                            task={task}
-                            onTodoClear={onTodoClear}
-                            onTodoDelete={onTodoDelete}
-                        />
-                    ))
-                :  <div className="to-do-list__empty">Пусто...</div>
-            }
+            <ReactCSSTransitionGroup
+                transitionName="example"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnterTimeout={300}
+                transitionLeave={false}
+            >
+                {
+                    tasks.length > 0
+                    ?
+                        tasks.map((task) => (
+                            <ToDoItem
+                                key={task.id}
+                                task={task}
+                                onTodoClear={onTodoClear}
+                                onTodoDelete={onTodoDelete}
+                            />
+                        ))
+                    :  <div className="to-do-list__empty">Пусто...</div>
+                }
+            </ReactCSSTransitionGroup>
         </div>
     );
 }

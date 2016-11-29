@@ -1,21 +1,42 @@
 .app {
-  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  padding: 20px;
+  transition: all 0.5s ease;
+}
+
+.app__title {
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Codystar', cursive;
+}
+
+.app__content {
   border-radius: 10px;
-  margin: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 @media screen and (max-width: 499px) {
   body {
     background-color: #fff;
   }
+
   .app {
-    box-shadow: none;
-    border-radius: 0;
-    margin: 0;
+    padding: 0;
   }
+
+  .app__content {
+    box-shadow: none;
+  }
+
+  .app__title {
+    display: none;
+  }
+
   .sort__link {
     &:nth-child(2) {
       margin: 0 10px;

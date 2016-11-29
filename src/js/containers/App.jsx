@@ -39,20 +39,23 @@ class App extends Component {
 
         return (
             <div className="app">
-                <Field
-                    onTodoAdd={addTodo}
-                />
-                <Sort
-                    filter={filter}
-                    onFilterChange={changeFilter}
-                    onAllDelete={deleteAll}
-                />
-                <ToDoList
-                    tasks={tasks}
-                    filter={filter}
-                    onTodoClear={clearTodo}
-                    onTodoDelete={deleteTodo}
-                />
+                <h1 className="app__title">To-Do</h1>
+                <div className="app__content">
+                    <Field
+                        onTodoAdd={addTodo}
+                    />
+                    <Sort
+                        filter={filter}
+                        onFilterChange={changeFilter}
+                        onAllDelete={deleteAll}
+                    />
+                    <ToDoList
+                        tasks={tasks}
+                        filter={filter}
+                        onTodoClear={clearTodo}
+                        onTodoDelete={deleteTodo}
+                    />
+                </div>
                 {
                     NODE_ENV === 'development' ? <DevTools /> : null
                 }

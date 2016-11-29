@@ -20,3 +20,21 @@
     right-radius: 10px;
   }
 }
+
+.example-enter {
+  opacity: 0;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity $transition-property;
+}
+
+.example-appear {
+  opacity: 0;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
