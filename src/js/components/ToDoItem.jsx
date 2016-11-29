@@ -1,7 +1,6 @@
 import React from 'react';
 
-function ToDoItem(props) {
-    const {task, onTodoClear, onTodoDelete} = props;
+function ToDoItem({task, onTodoClear, onTodoDelete}) {
 
     return (
         <div className={`to-do-item ${task.clear ? 'clear' : ''}`}>

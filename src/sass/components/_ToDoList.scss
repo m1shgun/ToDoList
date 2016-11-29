@@ -1,6 +1,6 @@
 .to-do-list {
   padding: 0 20px 15px 20px;
-  background-color: #fff;
+  background-color: $white-color;
   border-bottom: {
     left-radius: 10px;
     right-radius: 10px;
@@ -8,10 +8,8 @@
 }
 
 .to-do-list__empty {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
+  @include flex-props();
+  background: $white-color;
   margin-top: 15px;
   height: 30px;
   width: 100%;
@@ -27,7 +25,7 @@
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transition: opacity $transition-property;
+  transition: opacity $transition-two;
 }
 
 .example-appear {
@@ -36,5 +34,5 @@
 
 .example-appear.example-appear-active {
   opacity: 1;
-  transition: opacity 0.5s ease-in;
+  transition: opacity $transition-one;
 }

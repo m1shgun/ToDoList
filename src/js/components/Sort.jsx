@@ -1,7 +1,6 @@
 import React from 'react';
 
-function Sort(props) {
-    const {filter, onFilterChange, onAllDelete} = props;
+function Sort({filter, onFilterChange, onAllDelete}) {
 
     const setLinkActive = (type) => {
         return `sort__link ${filter === type ? 'active' : ''}`

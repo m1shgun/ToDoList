@@ -1,15 +1,15 @@
 .app {
   padding: 20px;
-  transition: all 0.5s ease;
+  transition: all $transition-one;
 }
 
 .app__title {
   margin-bottom: 10px;
-  color: #fff;
+  color: $white-color;
   text-align: center;
   font-size: 3em;
   font-weight: bold;
-  font-family: 'Codystar', cursive;
+  font-family: $title-font-family;
 }
 
 .app__content {
@@ -17,12 +17,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: $base-box-shadow;
 }
 
-@media screen and (max-width: 499px) {
+@media screen and (max-width: $breakpoint-two) {
   body {
-    background-color: #fff;
+    background-color: $white-color;
   }
 
   .app {

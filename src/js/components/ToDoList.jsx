@@ -2,9 +2,7 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ToDoItem from './ToDoItem.jsx';
 
-function ToDoList(props) {
-    const {filter, onTodoClear, onTodoDelete} = props;
-    let {tasks} = props;
+function ToDoList({tasks, filter, onTodoClear, onTodoDelete}) {
 
     if (filter !== 'all') {
         tasks = filter === 'done'

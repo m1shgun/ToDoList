@@ -1,0 +1,11 @@
+@mixin flex-props() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin inherit-size() {
+  width: 100%;
+  height: 100%;
+}
+

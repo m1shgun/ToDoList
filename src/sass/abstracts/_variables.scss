@@ -1,11 +1,30 @@
+$breakpoint-one: 371px;
+$breakpoint-two: 499px;
+$breakpoint-three: 1024px;
+
 $base-bg-color: rgb(162, 241, 168);
 $base-color: rgb(115, 115, 115);
 $base-font: 16px 'Arial', sans-serif;
+$base-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 
-$transition-property: 0.3s ease-in;
+$white-color: rgb(255, 255, 255);
+$grey-color: rgb(151, 151, 151);
+
+$border-color: rgb(220, 220, 220);
+$link-active-color: rgb(70, 70, 70);
 
 $content-max-width: 768px;
 $content-min-width: 320px;
+
+$transition-one: 0.5s ease-in;
+$transition-two: 0.3s ease-in;
+$transition-three: 0.1s ease-in;
+
+$title-font-family: 'Codystar', cursive;
+
+$border: 1px dashed $border-color;
+
+
 
 
 
