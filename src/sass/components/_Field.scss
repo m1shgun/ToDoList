@@ -31,7 +31,21 @@
   background: url('../../img/del.png') no-repeat;
   background-size: cover;
   cursor: pointer;
+  border-radius: 50%;
+  transition: transform .3s ease;
   &.show {
     display: block;
+  }
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .field__clear-button {
+    transition: none;
+    &:hover {
+      transform: rotate(0deg);
+    }
   }
 }
