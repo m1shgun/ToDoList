@@ -32,10 +32,6 @@
   background-size: cover;
   cursor: pointer;
   margin-left: 20px;
-  transition: all $transition-three;
-  &:hover {
-    transform: scale(1.3);
-  }
 }
 
 @media screen and (max-width: $breakpoint-one) {
@@ -51,11 +47,11 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-three) {
+@media screen and (min-width: $breakpoint-three) {
   .sort__delete-button {
-    transition: none;
+    transition: all $transition-three;
     &:hover {
-      transform: none;
+      transform: scale(1.3);
     }
   }
 }

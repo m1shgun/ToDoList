@@ -32,20 +32,16 @@
   background-size: cover;
   cursor: pointer;
   border-radius: 50%;
-  transition: transform .3s ease;
   &.show {
     display: block;
   }
-  &:hover {
-    transform: rotate(180deg);
-  }
 }
 
-@media screen and (max-width: $breakpoint-three) {
+@media screen and (min-width: $breakpoint-three) {
   .field__clear-button {
-    transition: none;
+    transition: transform .3s ease;
     &:hover {
-      transform: rotate(0deg);
+      transform: rotate(180deg);
     }
   }
 }
