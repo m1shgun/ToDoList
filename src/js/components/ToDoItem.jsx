@@ -10,7 +10,6 @@ function ToDoItem({task, onTodoClear, onTodoDelete}) {
             </div>
             <div className="to-do-item__delete" onClick={() => onTodoDelete(task.id)} />
         </div>
-
     );
 }
 
