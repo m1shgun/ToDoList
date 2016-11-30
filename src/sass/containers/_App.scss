@@ -21,20 +21,12 @@
 }
 
 @media screen and (max-width: $breakpoint-two) {
-  body {
-    background-color: $white-color;
-  }
-
   .app {
-    padding: 0;
+    padding: 20px 0;
   }
 
   .app__content {
     box-shadow: none;
-  }
-
-  .app__title {
-    display: none;
   }
 
   .sort__link {
