@@ -43,6 +43,7 @@ class App extends Component {
                 <div className="app__content">
                     <Field
                         onTodoAdd={addTodo}
+                        tasks={tasks}
                     />
                     <Sort
                         filter={filter}

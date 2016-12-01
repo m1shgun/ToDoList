@@ -10,7 +10,11 @@ class Field extends Component {
     }
 
     componentDidMount() {
-        this.input.focus();
+        this._inputFocus();
+    }
+
+    componentDidUpdate() {
+        this._inputFocus();
     }
 
     handleTodoAdd(e) {
@@ -19,28 +23,35 @@ class Field extends Component {
         if (!/^\s*$/.test(input.value) && e.keyCode === 13) {
             this.props.onTodoAdd(input);
             input.value = '';
-            this.setShowClear(false);
+            this._setShowClear(false);
         }
     }
 
     handleValueCheck(e) {
         if (e.target.value !== '') {
-            this.setShowClear(true);
+            this._setShowClear(true);
         } else {
-            this.setShowClear(false);
+            this._setShowClear(false);
         }
     }
 
     handleInputClear() {
         this.input.value = '';
-        this.setShowClear(false);
+        this._setShowClear(false);
         this.input.focus();
     }
 
-    setShowClear(value) {
+    _setShowClear(value) {
         this.setState({
             showClear: value
         })
+    }
+
+    _inputFocus() {
+        const {tasks} = this.props;
+        if (tasks.length === 0) {
+            this.input.focus();
+        }
     }
 
     render() {
