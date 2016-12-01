@@ -39,7 +39,7 @@ class App extends Component {
 
         return (
             <div className="app">
-                <h1 className="app__title">To-Do</h1>
+                <h1 className="app__title">TODO</h1>
                 <div className="app__content">
                     <Field
                         onTodoAdd={addTodo}
