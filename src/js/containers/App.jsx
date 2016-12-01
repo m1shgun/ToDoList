@@ -51,7 +51,6 @@ class App extends Component {
                     NODE_ENV === 'development' ? <DevTools /> : null
                 }
             </div>
-
         )
     }
 }
