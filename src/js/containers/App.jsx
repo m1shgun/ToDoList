@@ -17,16 +17,6 @@ class App extends Component {
         filterActions: PropTypes.object.isRequired
     };
 
-    componentDidUpdate() {
-        this._updateLocalStorage();
-    }
-
-    _updateLocalStorage() {
-        const {tasks} = this.props;
-        localStorage.tasks = JSON.stringify(tasks);
-        localStorage.count = tasks.length > 0 ? tasks[tasks.length - 1].id : 0;
-    }
-
     render() {
         const {tasks, filter} = this.props;
         const {
