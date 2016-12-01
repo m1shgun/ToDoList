@@ -9,6 +9,11 @@ const initialState = localStorage.tasks ? JSON.parse(localStorage.tasks) : [];
 
 let count = localStorage.count ? +localStorage.count : 0;
 
+const updateLocalStorage = (tasks) => {
+    localStorage.tasks = JSON.stringify(tasks);
+    localStorage.count = count;
+};
+
 const tasks = (state = initialState, action) => {
     switch (action.type) {
 
@@ -20,8 +25,7 @@ const tasks = (state = initialState, action) => {
                 clear: false
             });
 
-            localStorage.tasks = JSON.stringify(tasks);
-            localStorage.count = count;
+            updateLocalStorage(tasks);
             return [...tasks]
         }
 
@@ -33,7 +37,7 @@ const tasks = (state = initialState, action) => {
                 }
             });
 
-            localStorage.tasks = JSON.stringify(tasks);
+            updateLocalStorage(tasks);
             return [...tasks];
         }
 
@@ -43,16 +47,14 @@ const tasks = (state = initialState, action) => {
                 count = 0
             }
 
-            localStorage.tasks = JSON.stringify(tasks);
-            localStorage.count = count;
+            updateLocalStorage(tasks);
             return [...tasks];
         }
 
         case DELETE_ALL: {
             count = 0;
 
-            localStorage.tasks = JSON.stringify([]);
-            localStorage.count = count;
+            updateLocalStorage([]);
             return [];
         }
 
