@@ -13,7 +13,7 @@ function ToDoList({tasks, filter, onTodoClear, onTodoDelete}) {
     return (
         <div className="to-do-list">
             <ReactCSSTransitionGroup
-                transitionName="example"
+                transitionName="todo"
                 transitionAppear={true}
                 transitionAppearTimeout={500}
                 transitionEnterTimeout={300}

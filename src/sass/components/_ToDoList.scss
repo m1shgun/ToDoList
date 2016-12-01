@@ -19,20 +19,20 @@
   }
 }
 
-.example-enter {
+.todo-enter {
   opacity: 0;
 }
 
-.example-enter.example-enter-active {
+.todo-enter.todo-enter-active {
   opacity: 1;
   transition: opacity $transition-two;
 }
 
-.example-appear {
+.todo-appear {
   opacity: 0;
 }
 
-.example-appear.example-appear-active {
+.todo-appear.todo-appear-active {
   opacity: 1;
   transition: opacity $transition-one;
 }
