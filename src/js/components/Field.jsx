@@ -56,6 +56,7 @@ class Field extends Component {
 
     render() {
         const {showClear} = this.state;
+        const {mobile} = this.props;
 
         return (
             <div className="field">
@@ -68,7 +69,7 @@ class Field extends Component {
                     ref={ref => {this.input = ref;}}
                 />
                 <div
-                    className={`field__clear-button ${showClear ? 'show' : ''}`}
+                    className={`field__clear-button ${showClear ? 'show' : ''} ${mobile ? 'mobile' : ''}`}
                     onClick={::this.handleInputClear}
                 />
             </div>

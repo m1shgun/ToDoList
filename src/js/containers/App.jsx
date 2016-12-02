@@ -17,6 +17,13 @@ class App extends Component {
         filterActions: PropTypes.object.isRequired
     };
 
+    constructor(props) {
+        super(props);
+
+        //to remove :hover on mobile devices
+        this.mobile = !!('ontouchstart' in window);
+    }
+
     render() {
         const {tasks, filter} = this.props;
         const {
@@ -32,17 +39,20 @@ class App extends Component {
                 <h1 className="app__title">ToDo</h1>
                 <div className="app__content">
                     <Field
-                        onTodoAdd={addTodo}
                         tasks={tasks}
+                        mobile={this.mobile}
+                        onTodoAdd={addTodo}
                     />
                     <Sort
                         filter={filter}
+                        mobile={this.mobile}
                         onFilterChange={changeFilter}
                         onAllDelete={deleteAll}
                     />
                     <ToDoList
                         tasks={tasks}
                         filter={filter}
+                        mobile={this.mobile}
                         onTodoClear={clearTodo}
                         onTodoDelete={deleteTodo}
                     />

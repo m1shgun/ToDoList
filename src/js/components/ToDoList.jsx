@@ -2,7 +2,7 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ToDoItem from './ToDoItem.jsx';
 
-function ToDoList({tasks, filter, onTodoClear, onTodoDelete}) {
+function ToDoList({tasks, filter, mobile, onTodoClear, onTodoDelete}) {
 
     if (filter !== 'all') {
         tasks = filter === 'done'
@@ -26,6 +26,7 @@ function ToDoList({tasks, filter, onTodoClear, onTodoDelete}) {
                             <ToDoItem
                                 key={task.id}
                                 task={task}
+                                mobile={mobile}
                                 onTodoClear={onTodoClear}
                                 onTodoDelete={onTodoDelete}
                             />

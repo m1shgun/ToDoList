@@ -1,6 +1,6 @@
 .app {
   padding: 20px;
-  transition: all $transition-one;
+  transition: padding $transition-one;
 }
 
 .app__title {
@@ -18,6 +18,7 @@
   flex-direction: column;
   justify-content: center;
   box-shadow: $base-box-shadow;
+  transition: box-shadow $transition-one;
 }
 
 @media screen and (max-width: $breakpoint-two) {

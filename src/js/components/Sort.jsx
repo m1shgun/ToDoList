@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Sort({filter, onFilterChange, onAllDelete}) {
+function Sort({filter, mobile, onFilterChange, onAllDelete}) {
 
     const setLinkActive = (type) => {
         return `sort__link ${filter === type ? 'active' : ''}`
@@ -33,7 +33,7 @@ function Sort({filter, onFilterChange, onAllDelete}) {
                 <a href="#" className={setLinkActive('todo')}>Сделать</a>
                 <a href="#" className={setLinkActive('done')}>Выполнено</a>
             </div>
-            <div className="sort__delete-button" onClick={handleAllDelete}></div>
+            <div className={`sort__delete-button ${mobile ? 'mobile' : ''}`} onClick={handleAllDelete}></div>
         </div>
     );
 }

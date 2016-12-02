@@ -35,10 +35,7 @@
   &.show {
     display: block;
   }
-}
-
-@media screen and (min-width: $breakpoint-three) {
-  .field__clear-button {
+  &:not(.mobile) {
     transition: transform .3s ease;
     &:hover {
       transform: rotate(180deg);

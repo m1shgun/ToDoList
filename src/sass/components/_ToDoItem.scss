@@ -61,10 +61,7 @@
   background: url('../../img/trash.png') no-repeat;
   background-size: cover;
   cursor: pointer;
-}
-
-@media screen and (min-width: $breakpoint-three) {
-  .to-do-item__delete {
+  &:not(.mobile) {
     transition: transform $transition-three;
     &:hover {
       transform: translateY(-50%) scale(1.3);
