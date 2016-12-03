@@ -20,7 +20,7 @@ class Field extends Component {
     handleTodoAdd(e) {
         const input = e.target;
 
-        if (!/^\s*$/.test(input.value) && e.keyCode === 13) {
+        if (!/^\s*$/.test(input.value) && (e.keyCode || e.which) === 13) {
             this.props.onTodoAdd(input);
             input.value = '';
             this._setShowClear(false);
@@ -64,7 +64,7 @@ class Field extends Component {
                     className="field__input"
                     type="text"
                     placeholder="Что нужно сделать?"
-                    onKeyDown={::this.handleTodoAdd}
+                    onKeyPress={::this.handleTodoAdd}
                     onChange={::this.handleValueCheck}
                     ref={ref => {this.input = ref;}}
                 />

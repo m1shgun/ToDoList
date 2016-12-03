@@ -4,6 +4,12 @@ body {
   color: $base-color;
 }
 
+input {
+  &::-ms-clear {
+    display: none;
+  }
+}
+
 #content {
   max-width: $content-max-width;
   min-width: $content-min-width;
