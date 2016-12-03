@@ -25,23 +25,26 @@ const path = {
         html: 'build',
         css: 'build/css',
         js: 'build/js',
-        img: 'build/img'
+        img: 'build/img',
+        fonts: 'build/fonts'
     },
     src: {
-        html: 'src/index.html',
+        html: 'src/*.+(html|appcache)',
         css: 'src/sass/main.scss',
         js: 'src/js/main.js',
-        img: 'src/img/**/*.*'
+        img: 'src/img/**/*.*',
+        fonts: 'src/fonts/*.*'
     },
     output: {
         js: 'bundle.min.js',
         css: 'style.min.css'
     },
     watch: {
-        html: 'src/**/*.html',
+        html: 'src/**/*.+(html|appcache)',
         css: 'src/sass/**/*.scss',
         js: 'src/js/**/*.+(js|jsx)',
-        img: 'src/img/**/*.*'
+        img: 'src/img/**/*.*',
+        fonts: 'src/fonts/*.*'
     },
     clean: 'build'
 };
@@ -121,6 +124,12 @@ gulp.task('css', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('fonts', function () {
+    return gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts))
+        .pipe(reload({stream: true}));
+});
+
 gulp.task('html', function () {
     return gulp.src(path.src.html)
         .pipe(gulp.dest(path.build.html))
@@ -140,9 +149,10 @@ gulp.task('watch', function(){
     gulp.watch(path.watch.css,  ['css']);
     gulp.watch(path.watch.js,   ['js']);
     gulp.watch(path.watch.img,  ['img']);
+    gulp.watch(path.watch.fonts,  ['fonts']);
 });
 
 gulp.task('default', function () {
-    return runSequence('clean', ['js', 'img', 'css', 'html'], ['serve', 'watch']);
+    return runSequence('clean', ['js', 'img', 'fonts', 'css', 'html'], ['serve', 'watch']);
 });
 
