@@ -2,11 +2,10 @@ CACHE MANIFEST
 
 CACHE:
 index.html
-manifest.appcache
 fonts/Codystar-Regular.ttf
 css/style.min.css
 js/bundle.min.js
 img/del.png
-img/favicon.png
+img/icon.png
 img/tick.png
 img/trash.png

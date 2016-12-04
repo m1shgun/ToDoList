@@ -32,19 +32,19 @@ const path = {
         html: 'src/*.+(html|appcache)',
         css: 'src/sass/main.scss',
         js: 'src/js/main.js',
-        img: 'src/img/**/*.*',
-        fonts: 'src/fonts/*.*'
+        img: 'src/img/*.png',
+        fonts: 'src/fonts/*.ttf'
     },
     output: {
         js: 'bundle.min.js',
         css: 'style.min.css'
     },
     watch: {
-        html: 'src/**/*.+(html|appcache)',
+        html: 'src/*.+(html|appcache)',
         css: 'src/sass/**/*.scss',
         js: 'src/js/**/*.+(js|jsx)',
-        img: 'src/img/**/*.*',
-        fonts: 'src/fonts/*.*'
+        img: 'src/img/*.png',
+        fonts: 'src/fonts/*.ttf'
     },
     clean: 'build'
 };
@@ -150,6 +150,10 @@ gulp.task('watch', function(){
     gulp.watch(path.watch.js,   ['js']);
     gulp.watch(path.watch.img,  ['img']);
     gulp.watch(path.watch.fonts,  ['fonts']);
+});
+
+gulp.task('production', function () {
+    return runSequence('clean', ['js', 'img', 'fonts', 'css', 'html']);
 });
 
 gulp.task('default', function () {
